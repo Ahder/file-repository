@@ -1,4 +1,4 @@
-package com.rizomm.filemanager.business.entites;
+package com.rizomm.filemanager.entites;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
