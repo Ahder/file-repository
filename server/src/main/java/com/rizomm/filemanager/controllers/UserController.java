@@ -1,20 +1,25 @@
 package com.rizomm.filemanager.controllers;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import com.rizomm.filemanager.entites.User;
+import com.rizomm.filemanager.exception.ResourceNotFoundException;
+import com.rizomm.filemanager.repository.UserRepository;
+import com.rizomm.filemanager.security.CurrentUser;
+import com.rizomm.filemanager.security.UserPrincipal;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
-@RequestMapping("/users")
+@RestController
 public class UserController {
 
-    @PostMapping("/login")
-    public ResponseEntity login(@RequestParam String username, @RequestParam String password) {
-        // TODO: check if user is valid user
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
+    @Autowired
+    private UserRepository userRepository;
 
+    @GetMapping("/user/me")
+    @PreAuthorize("hasRole('USER')")
+    public User getCurrentUser(@CurrentUser UserPrincipal userPrincipal) {
+        return userRepository.findById(userPrincipal.getId())
+                .orElseThrow(() -> new ResourceNotFoundException("User", "id", userPrincipal.getId()));
+    }
 }
