@@ -1,20 +1,25 @@
 package com.rizomm.filemanager.controllers;
 
+import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.security.Principal;
+
 @Controller
-@RequestMapping("/users")
+@RequestMapping("/user")
+
 public class UserController {
 
-    @PostMapping("/login")
-    public ResponseEntity login(@RequestParam String username, @RequestParam String password) {
-        // TODO: check if user is valid user
-        return new ResponseEntity<>(HttpStatus.OK);
+    @GetMapping()
+    public Principal user(Principal principal){
+        return principal;
     }
+
 
 }
