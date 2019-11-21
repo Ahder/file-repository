@@ -2,7 +2,7 @@ package com.rizomm.filemanager.controllers;
 
 import com.rizomm.filemanager.entites.User;
 import com.rizomm.filemanager.exception.ResourceNotFoundException;
-import com.rizomm.filemanager.repository.UserRepository;
+import com.rizomm.filemanager.repositories.UserRepository;
 import com.rizomm.filemanager.security.CurrentUser;
 import com.rizomm.filemanager.security.UserPrincipal;
 import org.springframework.beans.factory.annotation.Autowired;

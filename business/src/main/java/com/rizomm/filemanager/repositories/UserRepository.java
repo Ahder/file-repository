@@ -1,4 +1,4 @@
-package com.rizomm.filemanager.repository;
+package com.rizomm.filemanager.repositories;
 
 
 import com.rizomm.filemanager.entites.User;

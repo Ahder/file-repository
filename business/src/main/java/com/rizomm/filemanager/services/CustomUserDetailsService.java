@@ -1,8 +1,9 @@
-package com.rizomm.filemanager.security;
+package com.rizomm.filemanager.services;
 
 import com.rizomm.filemanager.entites.User;
 import com.rizomm.filemanager.exception.ResourceNotFoundException;
-import com.rizomm.filemanager.repository.UserRepository;
+import com.rizomm.filemanager.repositories.UserRepository;
+import com.rizomm.filemanager.security.UserPrincipal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

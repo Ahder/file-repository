@@ -2,8 +2,8 @@ server:
     port: 8090
 spring:
     datasource:
-        password: root
-        url: jdbc:mysql://localhost:8889/file_manager?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC
+        password:
+        url: jdbc:mysql://localhost:3306/file_manager?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC
         username: root
     jpa:
         hibernate:

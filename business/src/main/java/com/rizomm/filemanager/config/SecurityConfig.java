@@ -1,9 +1,9 @@
 package com.rizomm.filemanager.config;
 
-import com.rizomm.filemanager.security.CustomUserDetailsService;
+import com.rizomm.filemanager.services.CustomUserDetailsService;
 import com.rizomm.filemanager.security.RestAuthenticationEntryPoint;
 import com.rizomm.filemanager.security.TokenAuthenticationFilter;
-import com.rizomm.filemanager.security.oauth2.CustomOAuth2UserService;
+import com.rizomm.filemanager.services.CustomOAuth2UserService;
 import com.rizomm.filemanager.security.oauth2.HttpCookieOAuth2AuthorizationRequestRepository;
 import com.rizomm.filemanager.security.oauth2.OAuth2AuthenticationFailureHandler;
 import com.rizomm.filemanager.security.oauth2.OAuth2AuthenticationSuccessHandler;

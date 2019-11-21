@@ -1,5 +1,8 @@
 package com.rizomm.filemanager.payload;
 
+import lombok.Data;
+
+@Data
 public class ApiResponse {
     private boolean success;
     private String message;
@@ -8,6 +11,4 @@ public class ApiResponse {
         this.success = success;
         this.message = message;
     }
-
-    // Getters and Setters (Omitted for brevity)
 }

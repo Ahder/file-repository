@@ -1,10 +1,10 @@
-package com.rizomm.filemanager.security.oauth2;
+package com.rizomm.filemanager.services;
 
 
 import com.rizomm.filemanager.entites.AuthProvider;
 import com.rizomm.filemanager.entites.User;
 import com.rizomm.filemanager.exception.OAuth2AuthenticationProcessingException;
-import com.rizomm.filemanager.repository.UserRepository;
+import com.rizomm.filemanager.repositories.UserRepository;
 import com.rizomm.filemanager.security.UserPrincipal;
 import com.rizomm.filemanager.security.user.OAuth2UserInfo;
 import com.rizomm.filemanager.security.user.OAuth2UserInfoFactory;

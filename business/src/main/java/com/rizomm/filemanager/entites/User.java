@@ -49,6 +49,4 @@ public class User {
     private AuthProvider provider;
 
     private String providerId;
-
-    // Getters and Setters (Omitted for brevity)
 }

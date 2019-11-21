@@ -8,7 +8,7 @@ import com.rizomm.filemanager.payload.AuthResponse;
 import com.rizomm.filemanager.payload.LoginRequest;
 
 import com.rizomm.filemanager.payload.SignUpRequest;
-import com.rizomm.filemanager.repository.UserRepository;
+import com.rizomm.filemanager.repositories.UserRepository;
 import com.rizomm.filemanager.security.TokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
