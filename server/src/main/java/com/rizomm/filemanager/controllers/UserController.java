@@ -10,7 +10,7 @@ import java.security.Principal;
 import java.util.List;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/")
 public class UserController {
 
     @Autowired
@@ -21,7 +21,7 @@ public class UserController {
         return ResponseEntity.ok(userService.findAll());
     }
 
-    @GetMapping("/me")
+    @GetMapping("/users/me")
     public String sayHello(Principal principal) {
         return "Hello, " + principal.getName();
     }
