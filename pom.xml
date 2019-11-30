@@ -66,6 +66,13 @@
 			<version>8.0.18</version>
 		</dependency>
 
+		<!-- Minio dependency -->
+		<dependency>
+			<groupId>com.jlefebure</groupId>
+			<artifactId>spring-boot-starter-minio</artifactId>
+			<version>1.2</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

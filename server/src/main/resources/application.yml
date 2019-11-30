@@ -11,7 +11,32 @@ spring:
     properties:
       hibernate:
       dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+
+  minio:
+    # Minio Host
+    url: http://127.0.0.1:9000/
+    # Minio Bucket name for your application
+    bucket: paper-kite
+    # Minio access key (login)
+    access-key: hello
+    # Minio secret key (password)
+    secret-key: helloworld
+
+  ## MULTIPART (MultipartProperties)
+  servlet:
+    multipart:
+      # Enable multipart uploads
+      enabled: true
+      # Threshold after which files are written to disk.
+      file-size-threshold: 2KB
+      # Max file size.
+      max-file-size: 5MB
+      # Max Request Size
+      max-request-size: 10MB
+
 okta:
   oauth2:
     issuer: https://{replace-me}/oauth2/default
     clientId: {replace-me}
+
+
