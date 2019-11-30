@@ -1,18 +1,16 @@
 spring:
   datasource:
-    username: sa
-    url: jdbc:h2:mem:filemanager
+    url: jdbc:mysql://localhost:3306/spring_social?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
+    username: root
     password:
-    name: demo-rizomm
-    driverClassName: org.h2.Driver
 
   jpa:
     show-sql: true
     hibernate:
       ddl-auto: update
-      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
-    database-platform: org.hibernate.dialect.H2Dialect
-
+    properties:
+      hibernate:
+      dialect: org.hibernate.dialect.MySQL5InnoDBDialect
 okta:
   oauth2:
     issuer: https://{replace-me}/oauth2/default
