@@ -11,16 +11,48 @@
 
     <artifactId>server</artifactId>
     <dependencies>
+        <!-- OAuth2 Client -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-security-oauth2-client</artifactId>
+            <groupId>org.springframework.security</groupId>
+        </dependency>
+
+        <!-- JWT library -->
+        <dependency>
+            <artifactId>jjwt</artifactId>
+            <groupId>io.jsonwebtoken</groupId>
+            <version>0.5.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
+        <dependency>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>2.2.1.RELEASE</version>
+            <groupId>org.springframework.boot</groupId>
+        </dependency>
+
+        <dependency>
+            <artifactId>h2</artifactId>
+            <groupId>com.h2database</groupId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <artifactId>business</artifactId>
+            <groupId>com.rizomm.filemanager</groupId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.okta.spring</groupId>
+            <artifactId>okta-spring-boot-starter</artifactId>
+            <version>1.3.0</version>
         </dependency>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>5.2.1.RELEASE</version>
         </dependency>
+
     </dependencies>
 
 
