@@ -25,16 +25,16 @@ public class FileController {
     private MinioClient minioClient;
 
     public FileController() throws InvalidPortException, InvalidEndpointException {
-         minioClient = new MinioClient("http://127.0.0.1:9000/", "hello", "helloworld");
+         minioClient = new MinioClient(" https://play.min.io", "Q3AM3UQ867SPQQA43P2F", "zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG");
     }
 
 
-    @GetMapping("/uploadFile")
+    @PostMapping("/uploadFile")
     public void uploadFile(@RequestParam("file") MultipartFile file, @RequestParam String bucketName) throws IOException, XmlPullParserException, NoSuchAlgorithmException, InvalidKeyException, InvalidArgumentException, InvalidResponseException, InternalException, NoResponseException, InvalidBucketNameException, InsufficientDataException, ErrorResponseException {
         minioClient.putObject(bucketName,  file.getOriginalFilename() , file.getInputStream(), file.getSize(), file.getContentType());
     }
 
-    @GetMapping("/uploadFiles")
+    @PostMapping("/uploadFiles")
     public void uploadFiles(@RequestParam("files") MultipartFile[] files, @RequestParam String bucketName) throws IOException, XmlPullParserException, NoSuchAlgorithmException, InvalidKeyException, InvalidArgumentException, InvalidResponseException, InternalException, NoResponseException, InvalidBucketNameException, InsufficientDataException, ErrorResponseException {
         for (MultipartFile file: files) {
             minioClient.putObject(bucketName,  file.getOriginalFilename() , file.getInputStream(), file.getSize(), file.getContentType());
