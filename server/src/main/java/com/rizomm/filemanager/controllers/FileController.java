@@ -67,12 +67,12 @@ public class FileController {
         return items;
     }
 
-    @GetMapping("/delete/{objectName}")
+    @DeleteMapping("/delete/{objectName}")
     public void deleteObject(@PathVariable String objectName, @RequestParam String bucketName) throws IOException, InvalidKeyException, NoSuchAlgorithmException, InsufficientDataException, InvalidResponseException, InternalException, NoResponseException, InvalidBucketNameException, XmlPullParserException, ErrorResponseException, InvalidArgumentException {
          minioClient.removeObject(bucketName,objectName);
     }
 
-    @GetMapping("/createBucket/{bucketName}")
+    @PostMapping("/createBucket/{bucketName}")
     public void createBucket(@PathVariable String bucketName) throws IOException, InvalidKeyException, NoSuchAlgorithmException, InsufficientDataException, InvalidResponseException, ErrorResponseException, NoResponseException, InvalidBucketNameException, XmlPullParserException, InternalException, RegionConflictException {
         minioClient.makeBucket(bucketName);
     }
