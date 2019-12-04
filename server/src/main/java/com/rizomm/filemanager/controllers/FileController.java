@@ -30,19 +30,29 @@ public class FileController {
 
 
     @PostMapping("/uploadFile")
-    public void uploadFile(@RequestParam("file") MultipartFile file, @RequestParam String bucketName) throws IOException, XmlPullParserException, NoSuchAlgorithmException, InvalidKeyException, InvalidArgumentException, InvalidResponseException, InternalException, NoResponseException, InvalidBucketNameException, InsufficientDataException, ErrorResponseException {
+    public void uploadFile(@RequestParam("file") MultipartFile file, @RequestParam String bucketName) throws IOException, XmlPullParserException, NoSuchAlgorithmException, InvalidKeyException, MinioException {
+        if(!minioClient.bucketExists(bucketName)) {
+            throw new MinioException("Bucket does not exists.");
+        }
         minioClient.putObject(bucketName,  file.getOriginalFilename() , file.getInputStream(), file.getSize(), file.getContentType());
     }
 
     @PostMapping("/uploadFiles")
-    public void uploadFiles(@RequestParam("files") MultipartFile[] files, @RequestParam String bucketName) throws IOException, XmlPullParserException, NoSuchAlgorithmException, InvalidKeyException, InvalidArgumentException, InvalidResponseException, InternalException, NoResponseException, InvalidBucketNameException, InsufficientDataException, ErrorResponseException {
+    public void uploadFiles(@RequestParam("files") MultipartFile[] files, @RequestParam String bucketName) throws IOException, XmlPullParserException, NoSuchAlgorithmException, InvalidKeyException, MinioException {
+        if(!minioClient.bucketExists(bucketName)) {
+            throw new MinioException("Bucket does not exists.");
+        }
         for (MultipartFile file: files) {
             minioClient.putObject(bucketName,  file.getOriginalFilename() , file.getInputStream(), file.getSize(), file.getContentType());
         }
     }
 
     @GetMapping("/downloadFile")
-    public void getObject(@RequestParam String objectName, @RequestParam String bucketName, HttpServletResponse response) throws IOException, InvalidKeyException, NoSuchAlgorithmException, InsufficientDataException, InvalidArgumentException, InvalidResponseException, InternalException, NoResponseException, InvalidBucketNameException, XmlPullParserException, ErrorResponseException {
+    public void getObject(@RequestParam String objectName, @RequestParam String bucketName, HttpServletResponse response) throws IOException, InvalidKeyException, NoSuchAlgorithmException, MinioException, XmlPullParserException {
+        if(!minioClient.bucketExists(bucketName)) {
+            throw new MinioException("Bucket does not exists.");
+        }
+
         InputStream inputStream = minioClient.getObject(bucketName, objectName);
 
         // Set the content type and attachment header.
@@ -55,7 +65,10 @@ public class FileController {
     }
 
     @GetMapping("/getAll")
-    public List<Item> getFiles(@RequestParam String bucketName) throws XmlPullParserException, InsufficientDataException, NoSuchAlgorithmException, IOException, NoResponseException, InvalidKeyException, InternalException, InvalidBucketNameException, ErrorResponseException {
+    public List<Item> getFiles(@RequestParam String bucketName) throws XmlPullParserException, MinioException, NoSuchAlgorithmException, IOException, InvalidKeyException {
+        if(!minioClient.bucketExists(bucketName)) {
+            throw new MinioException("Bucket does not exists.");
+        }
 
         Iterable<Result<Item>> myObjects = minioClient.listObjects(bucketName);
         List<Item> items = new ArrayList<>();
@@ -68,8 +81,11 @@ public class FileController {
     }
 
     @DeleteMapping("/delete/{objectName}")
-    public void deleteObject(@PathVariable String objectName, @RequestParam String bucketName) throws IOException, InvalidKeyException, NoSuchAlgorithmException, InsufficientDataException, InvalidResponseException, InternalException, NoResponseException, InvalidBucketNameException, XmlPullParserException, ErrorResponseException, InvalidArgumentException {
-         minioClient.removeObject(bucketName,objectName);
+    public void deleteObject(@PathVariable String objectName, @RequestParam String bucketName) throws IOException, InvalidKeyException, NoSuchAlgorithmException, MinioException, XmlPullParserException {
+        if(!minioClient.bucketExists(bucketName)) {
+            throw new MinioException("Bucket does not exists.");
+        }
+        minioClient.removeObject(bucketName,objectName);
     }
 
     @PostMapping("/createBucket/{bucketName}")
