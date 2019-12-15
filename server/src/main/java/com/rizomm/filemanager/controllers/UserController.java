@@ -12,9 +12,10 @@ public class UserController {
         return "hello";
     }
 
-    @PreAuthorize("hasRole('USER')")
+
     @GetMapping("file/upload")
     public String upload() {
+        System.out.println("user");
         return "upload de fichier";
     }
 

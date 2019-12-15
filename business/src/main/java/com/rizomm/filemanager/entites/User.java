@@ -1,18 +1,13 @@
 package com.rizomm.filemanager.entites;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
 
 
-@Builder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -20,12 +15,13 @@ import java.util.Set;
 @Entity
 public class User {
 
-    User(User user){
+    User(User user) {
         this.id = user.getId();
         this.username = user.getUsername();
         this.password = user.getPassword();
         this.roles = user.getRoles();
     }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
@@ -37,7 +33,6 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    //TODO CHERCHER EAGER ET LAZY
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Set<Role> roles;
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Role> roles;
 }
