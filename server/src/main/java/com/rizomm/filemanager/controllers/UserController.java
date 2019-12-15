@@ -1,20 +1,32 @@
 package com.rizomm.filemanager.controllers;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
-@RequestMapping("/users")
+@RestController
+@RequestMapping("/")
 public class UserController {
 
-    @PostMapping("/login")
-    public ResponseEntity login(@RequestParam String username, @RequestParam String password) {
-        // TODO: check if user is valid user
-        return new ResponseEntity<>(HttpStatus.OK);
+    @GetMapping("users")
+    public String hello() {
+        return "hello";
+    }
+
+    @PreAuthorize("hasRole('USER')")
+    @GetMapping("file/upload")
+    public String upload() {
+        return "upload de fichier";
+    }
+
+    @PreAuthorize("hasAnyRole('ADMIN')")
+    @GetMapping("admin/files")
+    public String getFileAdmin() {
+        return "Files for admin";
+    }
+
+    @GetMapping("manager")
+    public String getFile() {
+        return "files for all";
     }
 
 }
