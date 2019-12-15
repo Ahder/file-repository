@@ -1,6 +1,6 @@
 package com.rizomm.filemanager.repositories;
 
-import com.rizomm.filemanager.entites.User;
+import com.rizomm.filemanager.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
