@@ -1,4 +1,4 @@
-package com.rizomm.filemanager.entites;
+package com.rizomm.filemanager.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,7 +15,7 @@ import java.util.List;
 @Entity
 public class User {
 
-    User(User user) {
+   public User(User user) {
         this.id = user.getId();
         this.username = user.getUsername();
         this.password = user.getPassword();

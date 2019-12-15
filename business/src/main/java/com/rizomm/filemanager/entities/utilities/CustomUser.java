@@ -1,7 +1,8 @@
-package com.rizomm.filemanager.entites;
+package com.rizomm.filemanager.entities.utilities;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+
+import com.rizomm.filemanager.entities.Role;
+import com.rizomm.filemanager.entities.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

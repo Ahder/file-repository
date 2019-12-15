@@ -1,4 +1,4 @@
-package com.rizomm.filemanager.entites;
+package com.rizomm.filemanager.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,7 +11,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 @Table(name = "role")
-class Role {
+ public class Role {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
