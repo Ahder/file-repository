@@ -1,6 +1,5 @@
 package com.rizomm.filemanager.controllers;
 
-import com.rizomm.filemanager.business.entites.MinioConnection;
 import com.rizomm.filemanager.business.entites.User;
 import com.rizomm.filemanager.business.services.UserService;
 import io.minio.errors.InvalidEndpointException;
@@ -32,15 +31,15 @@ public class UserController {
     }
 
     @PostMapping("/createUser")
-    public ResponseEntity createUser(@RequestBody(required = false) MinioConnection minioConnection, Principal principal) throws InvalidPortException, InvalidEndpointException {
-        User createdUser = userService.create(minioConnection, principal.getName());
+    public ResponseEntity createUser(Principal principal) throws InvalidPortException, InvalidEndpointException {
+        User createdUser = userService.create(principal.getName());
         if (createdUser != null) {
             return new ResponseEntity(createdUser, HttpStatus.CREATED);
         } else {
             return new ResponseEntity("User " + principal.getName() + " already exists", HttpStatus.BAD_REQUEST);
         }
     }
-
+/*
     @PostMapping("/addConnection")
     public ResponseEntity addConnection(@RequestBody MinioConnection minioConnection, Principal principal) throws InvalidPortException, InvalidEndpointException {
         User existingUser = userService.addConnection(minioConnection, principal.getName());
@@ -49,5 +48,5 @@ public class UserController {
         } else {
             return new ResponseEntity("User " + principal.getName() + " does not exist", HttpStatus.NOT_FOUND);
         }
-    }
+    }*/
 }

@@ -1,6 +1,7 @@
 package com.rizomm.filemanager.business.entites;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,17 +14,12 @@ import javax.persistence.Id;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class MinioConnection {
+@Builder
+public class File {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String endPoint;
-
-    private String accessKey;
-
-    private String secretKey;
-
-    /*private String bucketName;*/
+    private String fileName;
 }
