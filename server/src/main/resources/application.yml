@@ -2,7 +2,7 @@ spring:
   main:
     allow-bean-definition-overriding: true
   datasource:
-    url: jdbc:mysql://localhost:8889/file_manager?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/file_manager?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC
     username: root
     password: root
 

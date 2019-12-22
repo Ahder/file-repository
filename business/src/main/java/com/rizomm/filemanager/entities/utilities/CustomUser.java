@@ -7,15 +7,20 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
 
 import static java.util.stream.Collectors.toList;
 
-public class CustomUser extends User implements UserDetails {
+public class CustomUser extends User implements UserDetails , Serializable {
 
     public CustomUser(User user) {
         super(user);
+    }
+
+    CustomUser(){
+
     }
 
     @Override
