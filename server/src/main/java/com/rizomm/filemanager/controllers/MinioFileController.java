@@ -24,7 +24,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/files")
-public class FileController {
+public class MinioFileController {
 
     @Autowired
     private UserService userService;
@@ -35,7 +35,7 @@ public class FileController {
     private MinioClient minioClient;
 
 
-    public FileController() throws InvalidPortException, InvalidEndpointException {
+    public MinioFileController() throws InvalidPortException, InvalidEndpointException {
     }
 
 
