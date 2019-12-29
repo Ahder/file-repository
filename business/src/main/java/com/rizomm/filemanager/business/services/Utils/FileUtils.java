@@ -1,4 +1,4 @@
-package com.rizomm.filemanager.business.Utils;
+package com.rizomm.filemanager.business.services.Utils;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;

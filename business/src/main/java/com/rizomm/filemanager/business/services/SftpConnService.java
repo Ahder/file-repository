@@ -1,7 +1,7 @@
 package com.rizomm.filemanager.business.services;
 
 
-import com.rizomm.filemanager.business.entites.ConnectionSftp;
+import com.rizomm.filemanager.business.entities.ConnectionSftp;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

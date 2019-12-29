@@ -1,6 +1,6 @@
-package com.rizomm.filemanager.controllers;
+package com.rizomm.filemanager.controllers.user;
 
-import com.rizomm.filemanager.business.entites.User;
+import com.rizomm.filemanager.business.entities.User;
 import com.rizomm.filemanager.business.services.UserService;
 import io.minio.errors.InvalidEndpointException;
 import io.minio.errors.InvalidPortException;

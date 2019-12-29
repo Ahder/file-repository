@@ -1,4 +1,4 @@
-package com.rizomm.filemanager.business.entites;
+package com.rizomm.filemanager.business.entities;
 
 import com.sun.istack.NotNull;
 import lombok.Data;

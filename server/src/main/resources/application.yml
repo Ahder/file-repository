@@ -2,14 +2,14 @@ spring:
   main:
     allow-bean-definition-overriding: true
   datasource:
-    url: jdbc:mysql://localhost:8889/file_manager?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3310/file_manager?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC
     username: root
     password: root
 
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
 
 okta:
   oauth2:
@@ -17,5 +17,4 @@ okta:
     clientId: 0oa23n7y05iGGONxy357
 #    client-secret: 8uE0lL-sM2ShTBrax6bD9knGLCyPpPYN_EHRk3J6
 
-server:
-  port: 8080
+

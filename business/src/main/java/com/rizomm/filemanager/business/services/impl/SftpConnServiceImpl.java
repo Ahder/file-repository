@@ -1,7 +1,7 @@
 package com.rizomm.filemanager.business.services.impl;
 
 
-import com.rizomm.filemanager.business.entites.ConnectionSftp;
+import com.rizomm.filemanager.business.entities.ConnectionSftp;
 import com.rizomm.filemanager.business.repositories.SftpRepository;
 import com.rizomm.filemanager.business.services.SftpConnService;
 import org.springframework.beans.factory.annotation.Autowired;

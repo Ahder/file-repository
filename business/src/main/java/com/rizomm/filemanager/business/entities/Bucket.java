@@ -1,4 +1,4 @@
-package com.rizomm.filemanager.business.entites;
+package com.rizomm.filemanager.business.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,19 +14,15 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class User {
+public class Bucket {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
-
-    @Email
-    private String email;
+    private String bucketName;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn
-    private List<Bucket> buckets = new ArrayList<>();
-
+    private List<File> files = new ArrayList<>();
 }

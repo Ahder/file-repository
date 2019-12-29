@@ -1,6 +1,6 @@
 package com.rizomm.filemanager.business.services.impl;
 
-import com.rizomm.filemanager.business.entites.User;
+import com.rizomm.filemanager.business.entities.User;
 import com.rizomm.filemanager.business.repositories.UserRepository;
 import com.rizomm.filemanager.business.services.UserService;
 import io.minio.MinioClient;
@@ -47,18 +47,5 @@ public class UserServiceImpl implements UserService {
 
         return userRepository.save(user);
     }
-
-/*    @Override
-    public User addConnection(MinioConnection minioConnection, String email) throws InvalidPortException, InvalidEndpointException {
-        Optional<User> existingUser = userRepository.findByEmail(email);
-        if (!existingUser.isPresent()) {
-            return null;
-        }
-
-        minioClient = new MinioClient(minioConnection.getEndPoint(), minioConnection.getAccessKey(), minioConnection.getSecretKey());
-        existingUser.get().getMinioConnections().add(minioConnection);
-        return userRepository.save(existingUser.get());
-    }*/
-
 
 }

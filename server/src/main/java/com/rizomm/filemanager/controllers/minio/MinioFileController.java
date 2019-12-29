@@ -1,6 +1,5 @@
-package com.rizomm.filemanager.controllers;
+package com.rizomm.filemanager.controllers.minio;
 
-import com.google.api.client.util.IOUtils;
 import com.rizomm.filemanager.business.services.MinioService;
 import com.rizomm.filemanager.business.services.UserService;
 import io.minio.MinioClient;
@@ -14,8 +13,6 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.URLConnection;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.Principal;
