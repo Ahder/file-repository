@@ -1,8 +1,8 @@
-package com.rizomm.filemanager.entities.utilities;
+package com.rizomm.filemanager.business.entities.utilities;
 
 
-import com.rizomm.filemanager.entities.Role;
-import com.rizomm.filemanager.entities.User;
+import com.rizomm.filemanager.business.entities.Role;
+import com.rizomm.filemanager.business.entities.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

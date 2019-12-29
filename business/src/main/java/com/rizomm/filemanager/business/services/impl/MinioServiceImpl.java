@@ -1,9 +1,9 @@
 package com.rizomm.filemanager.business.services.impl;
 
 import com.google.api.client.util.IOUtils;
-import com.rizomm.filemanager.business.entites.File;
-import com.rizomm.filemanager.business.entites.Bucket;
-import com.rizomm.filemanager.business.entites.User;
+import com.rizomm.filemanager.business.entities.Bucket;
+import com.rizomm.filemanager.business.entities.File;
+import com.rizomm.filemanager.business.entities.User;
 import com.rizomm.filemanager.business.repositories.BucketRepository;
 import com.rizomm.filemanager.business.repositories.FileRepository;
 import com.rizomm.filemanager.business.repositories.UserRepository;

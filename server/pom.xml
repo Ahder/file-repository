@@ -17,6 +17,7 @@
             <groupId>org.springframework.security</groupId>
         </dependency>
 
+
         <!-- JWT library -->
         <dependency>
             <artifactId>jjwt</artifactId>
@@ -53,18 +54,18 @@
             <version>5.2.1.RELEASE</version>
         </dependency>
         <dependency>
-            <groupId>org.springframework.security.oauth.boot</groupId>
-            <artifactId>spring-security-oauth2-autoconfigure</artifactId>
-            <version>2.1.1.RELEASE</version>
-            <groupId>com.rizomm.filemanager</groupId>
-            <artifactId>business</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <groupId>io.minio</groupId>
+            <artifactId>minio</artifactId>
+            <version>6.0.11</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>commons-net</groupId>
-            <artifactId>commons-net</artifactId>
-            <version>3.6</version>
+            <groupId>io.minio</groupId>
+            <artifactId>minio</artifactId>
+            <version>6.0.11</version>
+            <scope>compile</scope>
         </dependency>
+
 
     </dependencies>
 

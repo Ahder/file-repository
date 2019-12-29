@@ -1,4 +1,5 @@
-package com.rizomm.filemanager.entites;
+
+package com.rizomm.filemanager.business.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,13 +13,14 @@ import java.util.List;
 
 
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "user")
 @Entity
 public class User {
 
-    User(User user) {
+
+    public User(User user) {
         this.id = user.getId();
         this.username = user.getUsername();
         this.password = user.getPassword();
@@ -27,24 +29,21 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id")
     private Long id;
 
     private String name;
 
     @Email
     private String email;
-    @Column(name = "username")
+
     private String username;
+    private String password;
+
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn
     private List<Bucket> buckets = new ArrayList<>();
 
-    @Column(name = "password")
-    private String password;
-
-    //TODO CHERCHER EAGER ET LAZY
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Set<Role> roles;
+    private List<Role> roles;
 }

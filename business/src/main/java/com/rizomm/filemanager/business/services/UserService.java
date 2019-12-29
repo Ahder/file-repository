@@ -1,6 +1,6 @@
 package com.rizomm.filemanager.business.services;
 
-import com.rizomm.filemanager.business.entites.User;
+import com.rizomm.filemanager.business.entities.User;
 
 import java.util.List;
 import java.util.Optional;

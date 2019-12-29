@@ -1,9 +1,9 @@
-package com.rizomm.filemanager.services.impl;
+package com.rizomm.filemanager.business.services.impl;
 
-import com.rizomm.filemanager.entities.utilities.CustomUser;
-import com.rizomm.filemanager.entities.User;
-import com.rizomm.filemanager.repositories.UserRepository;
-import com.rizomm.filemanager.services.CustomUserDetailsService;
+import com.rizomm.filemanager.business.entities.utilities.CustomUser;
+import com.rizomm.filemanager.business.entities.User;
+import com.rizomm.filemanager.business.repositories.UserRepository;
+import com.rizomm.filemanager.business.services.CustomUserDetailsService;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;

@@ -1,13 +1,16 @@
-package com.rizomm.filemanager.controllers;
+package com.rizomm.filemanager.server.controllers;
 
-import com.rizomm.filemanager.business.entites.User;
+import com.rizomm.filemanager.business.entities.User;
 import com.rizomm.filemanager.business.services.UserService;
 import io.minio.errors.InvalidEndpointException;
 import io.minio.errors.InvalidPortException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.security.Principal;
 import java.util.List;
@@ -26,8 +29,8 @@ public class UserController {
     }
 
     @GetMapping("/me")
-    public String sayHello(Principal principal) {
-        return "Hello, " + principal.getName();
+    public String sayHello() {
+        return "Hello, " ;
     }
 
     @PostMapping("/createUser")

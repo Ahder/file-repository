@@ -1,4 +1,4 @@
-package com.rizomm.filemanager.services;
+package com.rizomm.filemanager.business.services;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
