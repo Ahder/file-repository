@@ -1,12 +1,14 @@
 package com.rizomm.filemanager.business.services.impl;
 
-import java.util.List;
-
-import com.rizomm.filemanager.business.entites.User;
+import com.rizomm.filemanager.business.entities.User;
 import com.rizomm.filemanager.business.repositories.UserRepository;
 import com.rizomm.filemanager.business.services.UserService;
+import io.minio.MinioClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -14,17 +16,36 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userRepository;
 
+    private MinioClient minioClient;
+
+
     @Override
     public List<User> findAll() {
         return userRepository.findAll();
     }
 
     @Override
-    public User create(User user) {
-        User save = userRepository.save(user);
-
-        return save;
+    public Optional<User> findById(Long id) {
+        return userRepository.findById(id);
     }
 
+    @Override
+    public Optional<User> findByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
+
+    @Override
+    public User create(String email) {
+        Optional<User> existingUser = userRepository.findByEmail(email);
+        if (existingUser.isPresent()) {
+            return null;
+        }
+
+        User user = User.builder()
+                .email(email)
+                .build();
+
+        return userRepository.save(user);
+    }
 
 }

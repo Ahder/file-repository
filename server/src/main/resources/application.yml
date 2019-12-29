@@ -2,24 +2,19 @@ spring:
   main:
     allow-bean-definition-overriding: true
   datasource:
-    username: sa
-    url: jdbc:h2:mem:filemanager
-    password:
-    name: demo-rizomm
-    driverClassName: org.h2.Driver
+    url: jdbc:mysql://bccd56800534c3:42029215@eu-cdbr-west-02.cleardb.net/heroku_fcd136a05d025e9?reconnect=true
+    username: bccd56800534c3
+    password: 42029215
 
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: update
-      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
-    database-platform: org.hibernate.dialect.H2Dialect
+      ddl-auto: create
 
 okta:
   oauth2:
     issuer: https://dev-407428.okta.com/oauth2/default
-    clientId: 0oa228ysos3HNd20u357
-    client-secret: 8uE0lL-sM2ShTBrax6bD9knGLCyPpPYN_EHRk3J6
+    clientId: 0oa23n7y05iGGONxy357
+#    client-secret: 8uE0lL-sM2ShTBrax6bD9knGLCyPpPYN_EHRk3J6
 
-server:
-  port: 8080
+
