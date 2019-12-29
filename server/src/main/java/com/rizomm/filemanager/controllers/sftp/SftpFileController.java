@@ -9,6 +9,7 @@ import org.apache.commons.net.ftp.FTPReply;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -17,7 +18,7 @@ import java.security.Principal;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/connections/sftp/{connectionId}")
+@RequestMapping("/connections/sftp")
 public class SftpFileController {
     String server;
     int port;
@@ -36,8 +37,28 @@ public class SftpFileController {
             }
         }
     }
+    @PostMapping
+    public ResponseEntity<ConnectionSftp> createConnectionSftp(@RequestBody @Validated ConnectionSftp connectionsftp, Principal principal) {
+        connectionsftp.setUserEmail(principal.getName());
+        return ResponseEntity.status(HttpStatus.CREATED).body(this.sftpConnService.create(connectionsftp));
 
-    @GetMapping("/downloadFile")
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity deleteConnectionSftp(@PathVariable long id, Principal principal) {
+        Optional<ConnectionSftp> ConnectionDeleteSftp = this.sftpConnService.findById(id);
+        if (ConnectionDeleteSftp.isPresent()) {
+
+            if (!ConnectionDeleteSftp.get().getUserEmail().equals(principal.getName())) {
+                return new ResponseEntity(HttpStatus.FORBIDDEN);
+            }
+
+            this.sftpConnService.delete(ConnectionDeleteSftp.get());
+            return new ResponseEntity (HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity (HttpStatus.NOT_FOUND);
+    }
+    @GetMapping("/{connectionId}/downloadFile")
     public ResponseEntity<String> downloadFile(@RequestParam(value = "file") String fileName, @PathVariable long connectionId, Principal principal) {
 
         Optional<ConnectionSftp> ftpConnection = sftpConnService.findById(connectionId);
@@ -73,7 +94,7 @@ public class SftpFileController {
 
     }
     
-    @PostMapping("/uploadFile")
+    @PostMapping("/{connectionId}/uploadFile")
     public ResponseEntity<String> uploadFile(@RequestPart(value = "file") MultipartFile file, @PathVariable long connectionId, Principal principal) {
         Optional<ConnectionSftp> ftpConnection = sftpConnService.findById(connectionId);
         server = ftpConnection.get().getHost();
@@ -116,7 +137,7 @@ public class SftpFileController {
 
     }
 
-    @DeleteMapping("/deleteFile")
+    @DeleteMapping("/{connectionId}/deleteFile")
     public ResponseEntity<String> deleteFile(@RequestPart(value = "file") String file, @PathVariable long connectionId, Principal principal) {
         Optional<ConnectionSftp> ftpConnection = sftpConnService.findById(connectionId);
         server = ftpConnection.get().getHost();

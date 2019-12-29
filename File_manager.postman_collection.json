@@ -1,0 +1,624 @@
+{
+	"info": {
+		"_postman_id": "bbe590cc-f32b-44b4-a237-13a18bd1f48c",
+		"name": "File manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Bucket",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJ2NUFtaUl0bXhhWnlDbHdWdENHWVNmVk5RN1g1QWRUbVBnekRSeWZtYkpJIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULlcyb2RLS0ZXdURmNktjbWpZcjZuWnFVM0FwbWI1aTdkeC1UMlhjWFBybXciLCJpc3MiOiJodHRwczovL2Rldi00MDc0Mjgub2t0YS5jb20vb2F1dGgyL2RlZmF1bHQiLCJhdWQiOiJhcGk6Ly9kZWZhdWx0IiwiaWF0IjoxNTc2OTM3ODE1LCJleHAiOjE1NzY5NDE0MTUsImNpZCI6IjBvYTIzbjd5MDVpR0dPTnh5MzU3IiwidWlkIjoiMDB1MjI3OGpsOGxCekJOUEEzNTciLCJzY3AiOlsib3BlbmlkIl0sInN1YiI6IkhpY2hlbWJlZGphb3VpNEBnbWFpbC5jb20ifQ.G-71lHZWW0JXt2a-NZhSaBi6HDRw3k7C2nQoI7hoc4JX3iVqs9dwwLznFNgFuC4z_OwFxjh0gO29uYLH6h2BcBU73YOfncn0Y2Xbntp1eh2ROgFqK4NLMVFsgx1amxQbGrwQOcyJhFTYnyDUgsM_xyDyjH_unri0xRk9ZryAfaT8Fd7osD22cO19874aTPyzmCwnqUmXY5aCU7aoQIsaeCwtqlnA84sZgqaF6EfAK4ikMZV7PCV4PzyhsbE0XgMQ-uaoW9RQ8GiOBmxLIfq-jsEVJ9sxBU_safJY6VbdvZK28t9pYkslJOfSo1gKAhINECT7iaAboPvofsoSo5vABQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/files/createBucket/mybucket",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"files",
+						"createBucket",
+						"mybucket"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create FTP Server",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJ2NUFtaUl0bXhhWnlDbHdWdENHWVNmVk5RN1g1QWRUbVBnekRSeWZtYkpJIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULlcyb2RLS0ZXdURmNktjbWpZcjZuWnFVM0FwbWI1aTdkeC1UMlhjWFBybXciLCJpc3MiOiJodHRwczovL2Rldi00MDc0Mjgub2t0YS5jb20vb2F1dGgyL2RlZmF1bHQiLCJhdWQiOiJhcGk6Ly9kZWZhdWx0IiwiaWF0IjoxNTc2OTM3ODE1LCJleHAiOjE1NzY5NDE0MTUsImNpZCI6IjBvYTIzbjd5MDVpR0dPTnh5MzU3IiwidWlkIjoiMDB1MjI3OGpsOGxCekJOUEEzNTciLCJzY3AiOlsib3BlbmlkIl0sInN1YiI6IkhpY2hlbWJlZGphb3VpNEBnbWFpbC5jb20ifQ.G-71lHZWW0JXt2a-NZhSaBi6HDRw3k7C2nQoI7hoc4JX3iVqs9dwwLznFNgFuC4z_OwFxjh0gO29uYLH6h2BcBU73YOfncn0Y2Xbntp1eh2ROgFqK4NLMVFsgx1amxQbGrwQOcyJhFTYnyDUgsM_xyDyjH_unri0xRk9ZryAfaT8Fd7osD22cO19874aTPyzmCwnqUmXY5aCU7aoQIsaeCwtqlnA84sZgqaF6EfAK4ikMZV7PCV4PzyhsbE0XgMQ-uaoW9RQ8GiOBmxLIfq-jsEVJ9sxBU_safJY6VbdvZK28t9pYkslJOfSo1gKAhINECT7iaAboPvofsoSo5vABQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/files/createBucket/mybucket",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"files",
+						"createBucket",
+						"mybucket"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload File Bucket",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJ2NUFtaUl0bXhhWnlDbHdWdENHWVNmVk5RN1g1QWRUbVBnekRSeWZtYkpJIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULnNEMVVyTi1XOENKU2hZTk9VT0NkVjB2OVE0R3BvUkFSaGYySjlUYkZKclUiLCJpc3MiOiJodHRwczovL2Rldi00MDc0Mjgub2t0YS5jb20vb2F1dGgyL2RlZmF1bHQiLCJhdWQiOiJhcGk6Ly9kZWZhdWx0IiwiaWF0IjoxNTc2NjA0NjU0LCJleHAiOjE1NzY2MDgyNTQsImNpZCI6IjBvYTIzbjd5MDVpR0dPTnh5MzU3IiwidWlkIjoiMDB1MjI3OGpsOGxCekJOUEEzNTciLCJzY3AiOlsib3BlbmlkIl0sInN1YiI6IkhpY2hlbWJlZGphb3VpNEBnbWFpbC5jb20ifQ.Wa40N9KLUeLTSZZoPabtStx7K_K_6g8L77xwB6LF-gjXU2oT2NWOgdmpBEKFGnM2k_yiloO7ZyQYrBFpZ7Z35DeXSegImjauBTQZe11-282ik_OGwClPh0h_47gEIEOK9Mvj5ZzqMHqgX31yM-pgZ4Or-VuK_SBR6B54JP38EzOY3YsU6WVoF48g7sMhpmztZRILYMsJfFJQIYLPuAOizrIu13NnNhRp_teux2tLd7g9lBTXMc5HeC_NUEVLHk9VKzEKT8hHmDtM_RGx2RJ7A6Hdx2IYhkNVuNcMKEz52Df4ZLEpkpnqnbfZzCeMspSPzXQ-YKRvBggM3eqvELqCww",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/Red.Ah/Documents/Catho M2/Semestre 1/React js/projet/javascript-sncf/fncs.js"
+						},
+						{
+							"key": "bucketName",
+							"value": "mybucket",
+							"type": "text"
+						},
+						{
+							"key": "objectName",
+							"value": "package-lock.json",
+							"type": "text",
+							"disabled": true
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/files/uploadFile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"files",
+						"uploadFile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Files Bucket",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJ2NUFtaUl0bXhhWnlDbHdWdENHWVNmVk5RN1g1QWRUbVBnekRSeWZtYkpJIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULnNEMVVyTi1XOENKU2hZTk9VT0NkVjB2OVE0R3BvUkFSaGYySjlUYkZKclUiLCJpc3MiOiJodHRwczovL2Rldi00MDc0Mjgub2t0YS5jb20vb2F1dGgyL2RlZmF1bHQiLCJhdWQiOiJhcGk6Ly9kZWZhdWx0IiwiaWF0IjoxNTc2NjA0NjU0LCJleHAiOjE1NzY2MDgyNTQsImNpZCI6IjBvYTIzbjd5MDVpR0dPTnh5MzU3IiwidWlkIjoiMDB1MjI3OGpsOGxCekJOUEEzNTciLCJzY3AiOlsib3BlbmlkIl0sInN1YiI6IkhpY2hlbWJlZGphb3VpNEBnbWFpbC5jb20ifQ.Wa40N9KLUeLTSZZoPabtStx7K_K_6g8L77xwB6LF-gjXU2oT2NWOgdmpBEKFGnM2k_yiloO7ZyQYrBFpZ7Z35DeXSegImjauBTQZe11-282ik_OGwClPh0h_47gEIEOK9Mvj5ZzqMHqgX31yM-pgZ4Or-VuK_SBR6B54JP38EzOY3YsU6WVoF48g7sMhpmztZRILYMsJfFJQIYLPuAOizrIu13NnNhRp_teux2tLd7g9lBTXMc5HeC_NUEVLHk9VKzEKT8hHmDtM_RGx2RJ7A6Hdx2IYhkNVuNcMKEz52Df4ZLEpkpnqnbfZzCeMspSPzXQ-YKRvBggM3eqvELqCww",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": [
+								"/C:/Users/Red.Ah/Documents/Catho M2/Semestre 1/React js/projet/javascript-sncf/fncs.js",
+								"/C:/Users/Red.Ah/Documents/Catho M2/Semestre 1/React js/projet/javascript-sncf/package.json"
+							]
+						},
+						{
+							"key": "bucketName",
+							"value": "mybucket",
+							"type": "text"
+						},
+						{
+							"key": "objectName",
+							"value": "package-lock.json",
+							"type": "text",
+							"disabled": true
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/files/uploadFiles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"files",
+						"uploadFiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload File FTP",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJ2NUFtaUl0bXhhWnlDbHdWdENHWVNmVk5RN1g1QWRUbVBnekRSeWZtYkpJIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULnNEMVVyTi1XOENKU2hZTk9VT0NkVjB2OVE0R3BvUkFSaGYySjlUYkZKclUiLCJpc3MiOiJodHRwczovL2Rldi00MDc0Mjgub2t0YS5jb20vb2F1dGgyL2RlZmF1bHQiLCJhdWQiOiJhcGk6Ly9kZWZhdWx0IiwiaWF0IjoxNTc2NjA0NjU0LCJleHAiOjE1NzY2MDgyNTQsImNpZCI6IjBvYTIzbjd5MDVpR0dPTnh5MzU3IiwidWlkIjoiMDB1MjI3OGpsOGxCekJOUEEzNTciLCJzY3AiOlsib3BlbmlkIl0sInN1YiI6IkhpY2hlbWJlZGphb3VpNEBnbWFpbC5jb20ifQ.Wa40N9KLUeLTSZZoPabtStx7K_K_6g8L77xwB6LF-gjXU2oT2NWOgdmpBEKFGnM2k_yiloO7ZyQYrBFpZ7Z35DeXSegImjauBTQZe11-282ik_OGwClPh0h_47gEIEOK9Mvj5ZzqMHqgX31yM-pgZ4Or-VuK_SBR6B54JP38EzOY3YsU6WVoF48g7sMhpmztZRILYMsJfFJQIYLPuAOizrIu13NnNhRp_teux2tLd7g9lBTXMc5HeC_NUEVLHk9VKzEKT8hHmDtM_RGx2RJ7A6Hdx2IYhkNVuNcMKEz52Df4ZLEpkpnqnbfZzCeMspSPzXQ-YKRvBggM3eqvELqCww",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/Red.Ah/Documents/Catho M2/Semestre 1/React js/projet/javascript-sncf/fncs.js"
+						},
+						{
+							"key": "bucketName",
+							"value": "mybucket",
+							"type": "text"
+						},
+						{
+							"key": "objectName",
+							"value": "package-lock.json",
+							"type": "text",
+							"disabled": true
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/files/uploadFile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"files",
+						"uploadFile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Download File Bucket",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJ2NUFtaUl0bXhhWnlDbHdWdENHWVNmVk5RN1g1QWRUbVBnekRSeWZtYkpJIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULnNEMVVyTi1XOENKU2hZTk9VT0NkVjB2OVE0R3BvUkFSaGYySjlUYkZKclUiLCJpc3MiOiJodHRwczovL2Rldi00MDc0Mjgub2t0YS5jb20vb2F1dGgyL2RlZmF1bHQiLCJhdWQiOiJhcGk6Ly9kZWZhdWx0IiwiaWF0IjoxNTc2NjA0NjU0LCJleHAiOjE1NzY2MDgyNTQsImNpZCI6IjBvYTIzbjd5MDVpR0dPTnh5MzU3IiwidWlkIjoiMDB1MjI3OGpsOGxCekJOUEEzNTciLCJzY3AiOlsib3BlbmlkIl0sInN1YiI6IkhpY2hlbWJlZGphb3VpNEBnbWFpbC5jb20ifQ.Wa40N9KLUeLTSZZoPabtStx7K_K_6g8L77xwB6LF-gjXU2oT2NWOgdmpBEKFGnM2k_yiloO7ZyQYrBFpZ7Z35DeXSegImjauBTQZe11-282ik_OGwClPh0h_47gEIEOK9Mvj5ZzqMHqgX31yM-pgZ4Or-VuK_SBR6B54JP38EzOY3YsU6WVoF48g7sMhpmztZRILYMsJfFJQIYLPuAOizrIu13NnNhRp_teux2tLd7g9lBTXMc5HeC_NUEVLHk9VKzEKT8hHmDtM_RGx2RJ7A6Hdx2IYhkNVuNcMKEz52Df4ZLEpkpnqnbfZzCeMspSPzXQ-YKRvBggM3eqvELqCww",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "fileId",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "bucketName",
+							"value": "mybucket",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/files/downloadFile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"files",
+						"downloadFile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Download File FTP",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJ2NUFtaUl0bXhhWnlDbHdWdENHWVNmVk5RN1g1QWRUbVBnekRSeWZtYkpJIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULnNEMVVyTi1XOENKU2hZTk9VT0NkVjB2OVE0R3BvUkFSaGYySjlUYkZKclUiLCJpc3MiOiJodHRwczovL2Rldi00MDc0Mjgub2t0YS5jb20vb2F1dGgyL2RlZmF1bHQiLCJhdWQiOiJhcGk6Ly9kZWZhdWx0IiwiaWF0IjoxNTc2NjA0NjU0LCJleHAiOjE1NzY2MDgyNTQsImNpZCI6IjBvYTIzbjd5MDVpR0dPTnh5MzU3IiwidWlkIjoiMDB1MjI3OGpsOGxCekJOUEEzNTciLCJzY3AiOlsib3BlbmlkIl0sInN1YiI6IkhpY2hlbWJlZGphb3VpNEBnbWFpbC5jb20ifQ.Wa40N9KLUeLTSZZoPabtStx7K_K_6g8L77xwB6LF-gjXU2oT2NWOgdmpBEKFGnM2k_yiloO7ZyQYrBFpZ7Z35DeXSegImjauBTQZe11-282ik_OGwClPh0h_47gEIEOK9Mvj5ZzqMHqgX31yM-pgZ4Or-VuK_SBR6B54JP38EzOY3YsU6WVoF48g7sMhpmztZRILYMsJfFJQIYLPuAOizrIu13NnNhRp_teux2tLd7g9lBTXMc5HeC_NUEVLHk9VKzEKT8hHmDtM_RGx2RJ7A6Hdx2IYhkNVuNcMKEz52Df4ZLEpkpnqnbfZzCeMspSPzXQ-YKRvBggM3eqvELqCww",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "fileId",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "bucketName",
+							"value": "mybucket",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/files/downloadFile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"files",
+						"downloadFile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Files",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJ2NUFtaUl0bXhhWnlDbHdWdENHWVNmVk5RN1g1QWRUbVBnekRSeWZtYkpJIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULnNEMVVyTi1XOENKU2hZTk9VT0NkVjB2OVE0R3BvUkFSaGYySjlUYkZKclUiLCJpc3MiOiJodHRwczovL2Rldi00MDc0Mjgub2t0YS5jb20vb2F1dGgyL2RlZmF1bHQiLCJhdWQiOiJhcGk6Ly9kZWZhdWx0IiwiaWF0IjoxNTc2NjA0NjU0LCJleHAiOjE1NzY2MDgyNTQsImNpZCI6IjBvYTIzbjd5MDVpR0dPTnh5MzU3IiwidWlkIjoiMDB1MjI3OGpsOGxCekJOUEEzNTciLCJzY3AiOlsib3BlbmlkIl0sInN1YiI6IkhpY2hlbWJlZGphb3VpNEBnbWFpbC5jb20ifQ.Wa40N9KLUeLTSZZoPabtStx7K_K_6g8L77xwB6LF-gjXU2oT2NWOgdmpBEKFGnM2k_yiloO7ZyQYrBFpZ7Z35DeXSegImjauBTQZe11-282ik_OGwClPh0h_47gEIEOK9Mvj5ZzqMHqgX31yM-pgZ4Or-VuK_SBR6B54JP38EzOY3YsU6WVoF48g7sMhpmztZRILYMsJfFJQIYLPuAOizrIu13NnNhRp_teux2tLd7g9lBTXMc5HeC_NUEVLHk9VKzEKT8hHmDtM_RGx2RJ7A6Hdx2IYhkNVuNcMKEz52Df4ZLEpkpnqnbfZzCeMspSPzXQ-YKRvBggM3eqvELqCww",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "bucketName",
+							"value": "mybucket",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/files/getAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"files",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete File",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJ2NUFtaUl0bXhhWnlDbHdWdENHWVNmVk5RN1g1QWRUbVBnekRSeWZtYkpJIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULnNEMVVyTi1XOENKU2hZTk9VT0NkVjB2OVE0R3BvUkFSaGYySjlUYkZKclUiLCJpc3MiOiJodHRwczovL2Rldi00MDc0Mjgub2t0YS5jb20vb2F1dGgyL2RlZmF1bHQiLCJhdWQiOiJhcGk6Ly9kZWZhdWx0IiwiaWF0IjoxNTc2NjA0NjU0LCJleHAiOjE1NzY2MDgyNTQsImNpZCI6IjBvYTIzbjd5MDVpR0dPTnh5MzU3IiwidWlkIjoiMDB1MjI3OGpsOGxCekJOUEEzNTciLCJzY3AiOlsib3BlbmlkIl0sInN1YiI6IkhpY2hlbWJlZGphb3VpNEBnbWFpbC5jb20ifQ.Wa40N9KLUeLTSZZoPabtStx7K_K_6g8L77xwB6LF-gjXU2oT2NWOgdmpBEKFGnM2k_yiloO7ZyQYrBFpZ7Z35DeXSegImjauBTQZe11-282ik_OGwClPh0h_47gEIEOK9Mvj5ZzqMHqgX31yM-pgZ4Or-VuK_SBR6B54JP38EzOY3YsU6WVoF48g7sMhpmztZRILYMsJfFJQIYLPuAOizrIu13NnNhRp_teux2tLd7g9lBTXMc5HeC_NUEVLHk9VKzEKT8hHmDtM_RGx2RJ7A6Hdx2IYhkNVuNcMKEz52Df4ZLEpkpnqnbfZzCeMspSPzXQ-YKRvBggM3eqvELqCww",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "fileId",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "bucketName",
+							"value": "mybucket",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/files/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"files",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete server FTP",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJ2NUFtaUl0bXhhWnlDbHdWdENHWVNmVk5RN1g1QWRUbVBnekRSeWZtYkpJIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULnNEMVVyTi1XOENKU2hZTk9VT0NkVjB2OVE0R3BvUkFSaGYySjlUYkZKclUiLCJpc3MiOiJodHRwczovL2Rldi00MDc0Mjgub2t0YS5jb20vb2F1dGgyL2RlZmF1bHQiLCJhdWQiOiJhcGk6Ly9kZWZhdWx0IiwiaWF0IjoxNTc2NjA0NjU0LCJleHAiOjE1NzY2MDgyNTQsImNpZCI6IjBvYTIzbjd5MDVpR0dPTnh5MzU3IiwidWlkIjoiMDB1MjI3OGpsOGxCekJOUEEzNTciLCJzY3AiOlsib3BlbmlkIl0sInN1YiI6IkhpY2hlbWJlZGphb3VpNEBnbWFpbC5jb20ifQ.Wa40N9KLUeLTSZZoPabtStx7K_K_6g8L77xwB6LF-gjXU2oT2NWOgdmpBEKFGnM2k_yiloO7ZyQYrBFpZ7Z35DeXSegImjauBTQZe11-282ik_OGwClPh0h_47gEIEOK9Mvj5ZzqMHqgX31yM-pgZ4Or-VuK_SBR6B54JP38EzOY3YsU6WVoF48g7sMhpmztZRILYMsJfFJQIYLPuAOizrIu13NnNhRp_teux2tLd7g9lBTXMc5HeC_NUEVLHk9VKzEKT8hHmDtM_RGx2RJ7A6Hdx2IYhkNVuNcMKEz52Df4ZLEpkpnqnbfZzCeMspSPzXQ-YKRvBggM3eqvELqCww",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "fileId",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "bucketName",
+							"value": "mybucket",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/files/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"files",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete File Ftp",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJ2NUFtaUl0bXhhWnlDbHdWdENHWVNmVk5RN1g1QWRUbVBnekRSeWZtYkpJIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULnNEMVVyTi1XOENKU2hZTk9VT0NkVjB2OVE0R3BvUkFSaGYySjlUYkZKclUiLCJpc3MiOiJodHRwczovL2Rldi00MDc0Mjgub2t0YS5jb20vb2F1dGgyL2RlZmF1bHQiLCJhdWQiOiJhcGk6Ly9kZWZhdWx0IiwiaWF0IjoxNTc2NjA0NjU0LCJleHAiOjE1NzY2MDgyNTQsImNpZCI6IjBvYTIzbjd5MDVpR0dPTnh5MzU3IiwidWlkIjoiMDB1MjI3OGpsOGxCekJOUEEzNTciLCJzY3AiOlsib3BlbmlkIl0sInN1YiI6IkhpY2hlbWJlZGphb3VpNEBnbWFpbC5jb20ifQ.Wa40N9KLUeLTSZZoPabtStx7K_K_6g8L77xwB6LF-gjXU2oT2NWOgdmpBEKFGnM2k_yiloO7ZyQYrBFpZ7Z35DeXSegImjauBTQZe11-282ik_OGwClPh0h_47gEIEOK9Mvj5ZzqMHqgX31yM-pgZ4Or-VuK_SBR6B54JP38EzOY3YsU6WVoF48g7sMhpmztZRILYMsJfFJQIYLPuAOizrIu13NnNhRp_teux2tLd7g9lBTXMc5HeC_NUEVLHk9VKzEKT8hHmDtM_RGx2RJ7A6Hdx2IYhkNVuNcMKEz52Df4ZLEpkpnqnbfZzCeMspSPzXQ-YKRvBggM3eqvELqCww",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "fileId",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "bucketName",
+							"value": "mybucket",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/files/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"files",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
