@@ -12,10 +12,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+
+import java.io.*;
 import java.security.Principal;
 import java.util.Optional;
 
@@ -35,6 +33,44 @@ public class SftpUploadFileController {
         }
     }
 
+    @GetMapping("/downloadFile")
+    public ResponseEntity<String> downloadFile(@RequestParam(value = "file") String fileName, @PathVariable long connectionId, Principal principal) {
+
+        Optional<ConnectionSftp> ftpConnection = sftpConnService.findById(connectionId);
+        String server = ftpConnection.get().getHost();
+        int port = ftpConnection.get().getPort();
+        String user = ftpConnection.get().getUsername();
+        String pass = ftpConnection.get().getPassword();
+        FTPClient ftpClient = new FTPClient();
+        try {
+            ftpClient.connect(server, port);
+            ftpClient.login(user, pass);
+            ftpClient.enterLocalPassiveMode();
+            ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
+            String fileToDownload = fileName;
+            OutputStream outputStream = new FileOutputStream(fileToDownload);
+            String firstRemoteFile = fileName;
+            System.out.println("uploading file");
+
+            boolean success = ftpClient.retrieveFile("/"+ firstRemoteFile, outputStream);
+            outputStream.close();
+
+            if (success) {
+                System.out.println("success :)");
+
+                return ResponseEntity.status(HttpStatus.CREATED).body(firstRemoteFile);
+            }
+
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return ResponseEntity.notFound().build();
+
+    }
+
+
     @PostMapping("/uploadFile")
     public ResponseEntity<String> uploadFile(@RequestPart(value = "file") MultipartFile file, @PathVariable long connectionId, Principal principal) {
         Optional<ConnectionSftp> ftpConnection = sftpConnService.findById(connectionId);
@@ -44,6 +80,7 @@ public class SftpUploadFileController {
         String pass = ftpConnection.get().getPassword();
 
         FTPClient ftpClient = new FTPClient();
+
         try {
 
             ftpClient.connect(server, port);
@@ -59,12 +96,12 @@ public class SftpUploadFileController {
             File fileToUpload = FileUtils.convertMultiPartToFile(file);
             InputStream inputStream = new FileInputStream(fileToUpload);
             String firstRemoteFile = file.getName();
-            System.out.println("Start uploading file");
+            System.out.println("uploading file");
 
-            boolean done = ftpClient.storeFile(firstRemoteFile, inputStream);
+            boolean success = ftpClient.storeFile(firstRemoteFile, inputStream);
             inputStream.close();
 
-            if (done) {
+            if (success) {
                 System.out.println("success :)");
 
                 return ResponseEntity.status(HttpStatus.CREATED).body(firstRemoteFile);
