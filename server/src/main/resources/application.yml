@@ -2,9 +2,9 @@ spring:
   main:
     allow-bean-definition-overriding: true
   datasource:
-    url: jdbc:mysql://localhost:8889/file_manager?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC
-    username: root
-    password: root
+    url: jdbc:mysql://bccd56800534c3:42029215@eu-cdbr-west-02.cleardb.net/heroku_fcd136a05d025e9?reconnect=true
+    username: bccd56800534c3
+    password: 42029215
 
   jpa:
     show-sql: true
