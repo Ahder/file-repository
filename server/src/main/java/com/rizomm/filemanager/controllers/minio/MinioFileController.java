@@ -49,9 +49,6 @@ public class MinioFileController {
         return items;
     }
 
-
-    /**********************************************************************************/
-
     @PostMapping("/createBucket/{bucketName}")
     public void createBucket(@PathVariable String bucketName, Principal principal) throws Exception {
         minioService.createBucket(bucketName, principal.getName());
