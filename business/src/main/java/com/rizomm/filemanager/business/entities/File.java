@@ -1,4 +1,4 @@
-package com.rizomm.filemanager.business.entites;
+package com.rizomm.filemanager.business.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,17 +11,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-@Builder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+@Builder
+public class File {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String username;
-
-    private String password;
+    private String fileName;
 }
