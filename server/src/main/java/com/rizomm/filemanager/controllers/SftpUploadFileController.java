@@ -20,6 +20,11 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/connections/sftp/{connectionId}")
 public class SftpUploadFileController {
+    String server;
+    int port;
+    String user;
+    String pass;
+    FTPClient ftpClient;
 
     @Autowired
     private SftpConnService sftpConnService;
@@ -37,11 +42,11 @@ public class SftpUploadFileController {
     public ResponseEntity<String> downloadFile(@RequestParam(value = "file") String fileName, @PathVariable long connectionId, Principal principal) {
 
         Optional<ConnectionSftp> ftpConnection = sftpConnService.findById(connectionId);
-        String server = ftpConnection.get().getHost();
-        int port = ftpConnection.get().getPort();
-        String user = ftpConnection.get().getUsername();
-        String pass = ftpConnection.get().getPassword();
-        FTPClient ftpClient = new FTPClient();
+        server = ftpConnection.get().getHost();
+        port = ftpConnection.get().getPort();
+        user = ftpConnection.get().getUsername();
+        pass = ftpConnection.get().getPassword();
+        ftpClient = new FTPClient();
         try {
             ftpClient.connect(server, port);
             ftpClient.login(user, pass);
@@ -50,7 +55,7 @@ public class SftpUploadFileController {
             String fileToDownload = fileName;
             OutputStream outputStream = new FileOutputStream(fileToDownload);
             String firstRemoteFile = fileName;
-            System.out.println("uploading file");
+            System.out.println("Downloading file");
 
             boolean success = ftpClient.retrieveFile("/"+ firstRemoteFile, outputStream);
             outputStream.close();
@@ -74,12 +79,11 @@ public class SftpUploadFileController {
     @PostMapping("/uploadFile")
     public ResponseEntity<String> uploadFile(@RequestPart(value = "file") MultipartFile file, @PathVariable long connectionId, Principal principal) {
         Optional<ConnectionSftp> ftpConnection = sftpConnService.findById(connectionId);
-        String server = ftpConnection.get().getHost();
-        int port = ftpConnection.get().getPort();
-        String user = ftpConnection.get().getUsername();
-        String pass = ftpConnection.get().getPassword();
-
-        FTPClient ftpClient = new FTPClient();
+        server = ftpConnection.get().getHost();
+        port = ftpConnection.get().getPort();
+        user = ftpConnection.get().getUsername();
+        pass = ftpConnection.get().getPassword();
+        ftpClient = new FTPClient();
 
         try {
 
@@ -115,4 +119,37 @@ public class SftpUploadFileController {
         return ResponseEntity.notFound().build();
 
     }
+
+    @DeleteMapping("/deleteFile")
+    public ResponseEntity<String> deleteFile(@RequestPart(value = "file") String file, @PathVariable long connectionId, Principal principal) {
+        Optional<ConnectionSftp> ftpConnection = sftpConnService.findById(connectionId);
+        server = ftpConnection.get().getHost();
+        port = ftpConnection.get().getPort();
+        user = ftpConnection.get().getUsername();
+        pass = ftpConnection.get().getPassword();
+        ftpClient = new FTPClient();
+
+        try {
+
+            ftpClient.connect(server, port);
+            ftpClient.login(user, pass);
+            String fileToDelete =  file;
+
+            boolean deleted = ftpClient.deleteFile(fileToDelete);
+            if (deleted) {
+                System.out.println("The file was deleted successfully.");
+                ftpClient.disconnect();
+            } else {
+                System.out.println("Could not delete the  file.");
+            }
+
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return ResponseEntity.noContent().build();
+
+    }
 }
+
