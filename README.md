@@ -22,7 +22,7 @@ The token will be in the redirect uri <br/>
 http://localhost:8080/implicit/callback#access_token={the-token-to-copy}&token_type=Bearer&expires_in=3600&scope=openid&state=null
 ```
 ## Test Our Application:
-import our file with File_manager.postman_collection.json and copy uour token to test it with Postman <br/>
+import our file with File_manager.postman_collection.json and copy our token to test it with Postman <br/>
 ## This section if you have any problems with ftp server: 
 if you cannnot upload a file or download or delete it you can use a docker for launching ftp server <br /> 
 The commands are:
